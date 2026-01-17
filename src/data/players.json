@@ -1,0 +1,562 @@
+[
+  {
+    "id": "player-001",
+    "name": "Virat Kohli",
+    "role": "batter",
+    "nationality": "domestic",
+    "basePrice": 200,
+    "stats": {
+      "matches": 237,
+      "battingAverage": 52.73,
+      "bowlingAverage": null,
+      "strikeRate": 130.02,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-002",
+    "name": "Jasprit Bumrah",
+    "role": "bowler",
+    "nationality": "domestic",
+    "basePrice": 200,
+    "stats": {
+      "matches": 120,
+      "battingAverage": null,
+      "bowlingAverage": 23.45,
+      "strikeRate": null,
+      "economyRate": 7.39
+    }
+  },
+  {
+    "id": "player-003",
+    "name": "Rashid Khan",
+    "role": "bowler",
+    "nationality": "overseas",
+    "basePrice": 150,
+    "stats": {
+      "matches": 95,
+      "battingAverage": 15.2,
+      "bowlingAverage": 20.12,
+      "strikeRate": 145.3,
+      "economyRate": 6.55
+    }
+  },
+  {
+    "id": "player-004",
+    "name": "Jos Buttler",
+    "role": "wicket-keeper",
+    "nationality": "overseas",
+    "basePrice": 150,
+    "stats": {
+      "matches": 110,
+      "battingAverage": 35.67,
+      "bowlingAverage": null,
+      "strikeRate": 149.52,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-005",
+    "name": "Hardik Pandya",
+    "role": "all-rounder",
+    "nationality": "domestic",
+    "basePrice": 150,
+    "stats": {
+      "matches": 120,
+      "battingAverage": 29.45,
+      "bowlingAverage": 30.12,
+      "strikeRate": 147.23,
+      "economyRate": 9.12
+    }
+  },
+  {
+    "id": "player-006",
+    "name": "Rishabh Pant",
+    "role": "wicket-keeper",
+    "nationality": "domestic",
+    "basePrice": 150,
+    "stats": {
+      "matches": 98,
+      "battingAverage": 34.89,
+      "bowlingAverage": null,
+      "strikeRate": 148.45,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-007",
+    "name": "Pat Cummins",
+    "role": "bowler",
+    "nationality": "overseas",
+    "basePrice": 150,
+    "stats": {
+      "matches": 85,
+      "battingAverage": 12.34,
+      "bowlingAverage": 24.56,
+      "strikeRate": 115.67,
+      "economyRate": 8.12
+    }
+  },
+  {
+    "id": "player-008",
+    "name": "Suryakumar Yadav",
+    "role": "batter",
+    "nationality": "domestic",
+    "basePrice": 150,
+    "stats": {
+      "matches": 85,
+      "battingAverage": 44.32,
+      "bowlingAverage": null,
+      "strikeRate": 167.89,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-009",
+    "name": "Glenn Maxwell",
+    "role": "all-rounder",
+    "nationality": "overseas",
+    "basePrice": 120,
+    "stats": {
+      "matches": 130,
+      "battingAverage": 31.45,
+      "bowlingAverage": 35.67,
+      "strikeRate": 154.32,
+      "economyRate": 8.56
+    }
+  },
+  {
+    "id": "player-010",
+    "name": "Yuzvendra Chahal",
+    "role": "bowler",
+    "nationality": "domestic",
+    "basePrice": 80,
+    "stats": {
+      "matches": 145,
+      "battingAverage": null,
+      "bowlingAverage": 26.78,
+      "strikeRate": null,
+      "economyRate": 7.89
+    }
+  },
+  {
+    "id": "player-011",
+    "name": "Rohit Sharma",
+    "role": "batter",
+    "nationality": "domestic",
+    "basePrice": 180,
+    "stats": {
+      "matches": 250,
+      "battingAverage": 48.56,
+      "bowlingAverage": null,
+      "strikeRate": 128.45,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-012",
+    "name": "Trent Boult",
+    "role": "bowler",
+    "nationality": "overseas",
+    "basePrice": 100,
+    "stats": {
+      "matches": 78,
+      "battingAverage": null,
+      "bowlingAverage": 25.34,
+      "strikeRate": null,
+      "economyRate": 8.23
+    }
+  },
+  {
+    "id": "player-013",
+    "name": "Ravindra Jadeja",
+    "role": "all-rounder",
+    "nationality": "domestic",
+    "basePrice": 120,
+    "stats": {
+      "matches": 180,
+      "battingAverage": 27.89,
+      "bowlingAverage": 28.45,
+      "strikeRate": 125.67,
+      "economyRate": 7.45
+    }
+  },
+  {
+    "id": "player-014",
+    "name": "David Warner",
+    "role": "batter",
+    "nationality": "overseas",
+    "basePrice": 120,
+    "stats": {
+      "matches": 165,
+      "battingAverage": 41.23,
+      "bowlingAverage": null,
+      "strikeRate": 139.87,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-015",
+    "name": "Mohammed Shami",
+    "role": "bowler",
+    "nationality": "domestic",
+    "basePrice": 100,
+    "stats": {
+      "matches": 90,
+      "battingAverage": null,
+      "bowlingAverage": 24.12,
+      "strikeRate": null,
+      "economyRate": 8.67
+    }
+  },
+  {
+    "id": "player-016",
+    "name": "Andre Russell",
+    "role": "all-rounder",
+    "nationality": "overseas",
+    "basePrice": 140,
+    "stats": {
+      "matches": 110,
+      "battingAverage": 28.78,
+      "bowlingAverage": 29.45,
+      "strikeRate": 178.34,
+      "economyRate": 9.23
+    }
+  },
+  {
+    "id": "player-017",
+    "name": "KL Rahul",
+    "role": "wicket-keeper",
+    "nationality": "domestic",
+    "basePrice": 150,
+    "stats": {
+      "matches": 115,
+      "battingAverage": 46.78,
+      "bowlingAverage": null,
+      "strikeRate": 136.23,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-018",
+    "name": "Mitchell Starc",
+    "role": "bowler",
+    "nationality": "overseas",
+    "basePrice": 120,
+    "stats": {
+      "matches": 72,
+      "battingAverage": null,
+      "bowlingAverage": 22.89,
+      "strikeRate": null,
+      "economyRate": 8.45
+    }
+  },
+  {
+    "id": "player-019",
+    "name": "Shubman Gill",
+    "role": "batter",
+    "nationality": "domestic",
+    "basePrice": 80,
+    "stats": {
+      "matches": 55,
+      "battingAverage": 38.45,
+      "bowlingAverage": null,
+      "strikeRate": 128.67,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-020",
+    "name": "Quinton de Kock",
+    "role": "wicket-keeper",
+    "nationality": "overseas",
+    "basePrice": 100,
+    "stats": {
+      "matches": 95,
+      "battingAverage": 32.45,
+      "bowlingAverage": null,
+      "strikeRate": 137.89,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-021",
+    "name": "Axar Patel",
+    "role": "all-rounder",
+    "nationality": "domestic",
+    "basePrice": 60,
+    "stats": {
+      "matches": 85,
+      "battingAverage": 22.34,
+      "bowlingAverage": 27.89,
+      "strikeRate": 135.67,
+      "economyRate": 7.12
+    }
+  },
+  {
+    "id": "player-022",
+    "name": "Faf du Plessis",
+    "role": "batter",
+    "nationality": "overseas",
+    "basePrice": 80,
+    "stats": {
+      "matches": 120,
+      "battingAverage": 35.67,
+      "bowlingAverage": null,
+      "strikeRate": 131.45,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-023",
+    "name": "Bhuvneshwar Kumar",
+    "role": "bowler",
+    "nationality": "domestic",
+    "basePrice": 60,
+    "stats": {
+      "matches": 145,
+      "battingAverage": null,
+      "bowlingAverage": 27.34,
+      "strikeRate": null,
+      "economyRate": 7.67
+    }
+  },
+  {
+    "id": "player-024",
+    "name": "Marcus Stoinis",
+    "role": "all-rounder",
+    "nationality": "overseas",
+    "basePrice": 80,
+    "stats": {
+      "matches": 75,
+      "battingAverage": 26.78,
+      "bowlingAverage": 34.56,
+      "strikeRate": 142.34,
+      "economyRate": 9.45
+    }
+  },
+  {
+    "id": "player-025",
+    "name": "Shreyas Iyer",
+    "role": "batter",
+    "nationality": "domestic",
+    "basePrice": 80,
+    "stats": {
+      "matches": 95,
+      "battingAverage": 33.45,
+      "bowlingAverage": null,
+      "strikeRate": 126.78,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-026",
+    "name": "Kagiso Rabada",
+    "role": "bowler",
+    "nationality": "overseas",
+    "basePrice": 100,
+    "stats": {
+      "matches": 68,
+      "battingAverage": null,
+      "bowlingAverage": 23.67,
+      "strikeRate": null,
+      "economyRate": 8.34
+    }
+  },
+  {
+    "id": "player-027",
+    "name": "Ishan Kishan",
+    "role": "wicket-keeper",
+    "nationality": "domestic",
+    "basePrice": 60,
+    "stats": {
+      "matches": 55,
+      "battingAverage": 28.34,
+      "bowlingAverage": null,
+      "strikeRate": 145.67,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-028",
+    "name": "Sam Curran",
+    "role": "all-rounder",
+    "nationality": "overseas",
+    "basePrice": 80,
+    "stats": {
+      "matches": 65,
+      "battingAverage": 19.45,
+      "bowlingAverage": 32.12,
+      "strikeRate": 138.45,
+      "economyRate": 8.89
+    }
+  },
+  {
+    "id": "player-029",
+    "name": "Kuldeep Yadav",
+    "role": "bowler",
+    "nationality": "domestic",
+    "basePrice": 50,
+    "stats": {
+      "matches": 78,
+      "battingAverage": null,
+      "bowlingAverage": 28.45,
+      "strikeRate": null,
+      "economyRate": 8.12
+    }
+  },
+  {
+    "id": "player-030",
+    "name": "Nicholas Pooran",
+    "role": "wicket-keeper",
+    "nationality": "overseas",
+    "basePrice": 60,
+    "stats": {
+      "matches": 58,
+      "battingAverage": 24.67,
+      "bowlingAverage": null,
+      "strikeRate": 155.34,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-031",
+    "name": "Devdutt Padikkal",
+    "role": "batter",
+    "nationality": "domestic",
+    "basePrice": 40,
+    "stats": {
+      "matches": 45,
+      "battingAverage": 32.45,
+      "bowlingAverage": null,
+      "strikeRate": 125.67,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-032",
+    "name": "Lockie Ferguson",
+    "role": "bowler",
+    "nationality": "overseas",
+    "basePrice": 60,
+    "stats": {
+      "matches": 48,
+      "battingAverage": null,
+      "bowlingAverage": 25.89,
+      "strikeRate": null,
+      "economyRate": 8.56
+    }
+  },
+  {
+    "id": "player-033",
+    "name": "Washington Sundar",
+    "role": "all-rounder",
+    "nationality": "domestic",
+    "basePrice": 40,
+    "stats": {
+      "matches": 52,
+      "battingAverage": 18.34,
+      "bowlingAverage": 31.45,
+      "strikeRate": 118.67,
+      "economyRate": 6.89
+    }
+  },
+  {
+    "id": "player-034",
+    "name": "Liam Livingstone",
+    "role": "all-rounder",
+    "nationality": "overseas",
+    "basePrice": 80,
+    "stats": {
+      "matches": 42,
+      "battingAverage": 27.89,
+      "bowlingAverage": 36.78,
+      "strikeRate": 162.34,
+      "economyRate": 9.12
+    }
+  },
+  {
+    "id": "player-035",
+    "name": "Prithvi Shaw",
+    "role": "batter",
+    "nationality": "domestic",
+    "basePrice": 50,
+    "stats": {
+      "matches": 62,
+      "battingAverage": 28.12,
+      "bowlingAverage": null,
+      "strikeRate": 152.34,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-036",
+    "name": "Adam Zampa",
+    "role": "bowler",
+    "nationality": "overseas",
+    "basePrice": 50,
+    "stats": {
+      "matches": 55,
+      "battingAverage": null,
+      "bowlingAverage": 27.12,
+      "strikeRate": null,
+      "economyRate": 7.78
+    }
+  },
+  {
+    "id": "player-037",
+    "name": "Sanju Samson",
+    "role": "wicket-keeper",
+    "nationality": "domestic",
+    "basePrice": 80,
+    "stats": {
+      "matches": 110,
+      "battingAverage": 29.45,
+      "bowlingAverage": null,
+      "strikeRate": 138.56,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-038",
+    "name": "Wanindu Hasaranga",
+    "role": "all-rounder",
+    "nationality": "overseas",
+    "basePrice": 100,
+    "stats": {
+      "matches": 45,
+      "battingAverage": 16.78,
+      "bowlingAverage": 19.45,
+      "strikeRate": 145.67,
+      "economyRate": 6.78
+    }
+  },
+  {
+    "id": "player-039",
+    "name": "Ruturaj Gaikwad",
+    "role": "batter",
+    "nationality": "domestic",
+    "basePrice": 60,
+    "stats": {
+      "matches": 58,
+      "battingAverage": 37.89,
+      "bowlingAverage": null,
+      "strikeRate": 132.45,
+      "economyRate": null
+    }
+  },
+  {
+    "id": "player-040",
+    "name": "Josh Hazlewood",
+    "role": "bowler",
+    "nationality": "overseas",
+    "basePrice": 80,
+    "stats": {
+      "matches": 52,
+      "battingAverage": null,
+      "bowlingAverage": 24.34,
+      "strikeRate": null,
+      "economyRate": 8.12
+    }
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "team-csk",
+    "name": "Chennai Super Kings",
+    "shortName": "CSK",
+    "budget": 9000,
+    "primaryColor": "#FCCA06"
+  },
+  {
+    "id": "team-mi",
+    "name": "Mumbai Indians",
+    "shortName": "MI",
+    "budget": 9000,
+    "primaryColor": "#004BA0"
+  },
+  {
+    "id": "team-rcb",
+    "name": "Royal Challengers Bangalore",
+    "shortName": "RCB",
+    "budget": 9000,
+    "primaryColor": "#D4213D"
+  },
+  {
+    "id": "team-kkr",
+    "name": "Kolkata Knight Riders",
+    "shortName": "KKR",
+    "budget": 9000,
+    "primaryColor": "#3A225D"
+  },
+  {
+    "id": "team-dc",
+    "name": "Delhi Capitals",
+    "shortName": "DC",
+    "budget": 9000,
+    "primaryColor": "#004C93"
+  },
+  {
+    "id": "team-pbks",
+    "name": "Punjab Kings",
+    "shortName": "PBKS",
+    "budget": 9000,
+    "primaryColor": "#DD1F2D"
+  },
+  {
+    "id": "team-rr",
+    "name": "Rajasthan Royals",
+    "shortName": "RR",
+    "budget": 9000,
+    "primaryColor": "#EA1A85"
+  },
+  {
+    "id": "team-srh",
+    "name": "Sunrisers Hyderabad",
+    "shortName": "SRH",
+    "budget": 9000,
+    "primaryColor": "#F7A721"
+  }
+]
