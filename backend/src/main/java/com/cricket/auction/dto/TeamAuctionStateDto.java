@@ -5,7 +5,7 @@ package com.cricket.auction.dto;
  * Includes current budget and squad information.
  */
 public record TeamAuctionStateDto(
-    String teamId,
+    TeamDto team,
     Integer remainingBudget,
     java.util.List<AcquiredPlayerDto> squad
 ) {}

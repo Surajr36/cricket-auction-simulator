@@ -31,7 +31,7 @@ public class PlayerSale {
     private Player player;
     
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "team_id", nullable = false)
+    @JoinColumn(name = "team_id", nullable = true)
     private Team team;
     
     /**
@@ -45,7 +45,7 @@ public class PlayerSale {
     private LocalDateTime soldAt;
     
     // Default constructor for JPA
-    protected PlayerSale() {}
+    public PlayerSale() {}
     
     public PlayerSale(Player player, Team team, Integer salePrice) {
         this.player = player;

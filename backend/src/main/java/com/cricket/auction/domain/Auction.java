@@ -39,7 +39,7 @@ public class Auction {
     @Column(nullable = false)
     private AuctionStatus status;
     
-    private LocalDateTime createdAt;
+    private LocalDateTime startedAt;
     private LocalDateTime completedAt;
     
     /**
@@ -58,11 +58,11 @@ public class Auction {
     private List<PlayerSale> playerSales = new ArrayList<>();
     
     // Default constructor for JPA
-    protected Auction() {}
+    public Auction() {}
     
     public Auction(AuctionStatus status) {
         this.status = status;
-        this.createdAt = LocalDateTime.now();
+        this.startedAt = LocalDateTime.now();
     }
     
     // Helper methods
@@ -100,12 +100,12 @@ public class Auction {
         this.status = status;
     }
     
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public LocalDateTime getStartedAt() {
+        return startedAt;
     }
     
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setStartedAt(LocalDateTime startedAt) {
+        this.startedAt = startedAt;
     }
     
     public LocalDateTime getCompletedAt() {

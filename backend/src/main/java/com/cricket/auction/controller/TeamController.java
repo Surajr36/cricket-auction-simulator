@@ -35,7 +35,7 @@ public class TeamController {
      * Returns a single team by ID.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<TeamDto> getTeam(@PathVariable Long id) {
+    public ResponseEntity<TeamDto> getTeam(@PathVariable String id) {
         try {
             return ResponseEntity.ok(teamService.getTeam(id));
         } catch (IllegalArgumentException e) {

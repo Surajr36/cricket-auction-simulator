@@ -38,7 +38,7 @@ public class PlayerController {
      * Returns a single player by ID.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<PlayerDto> getPlayer(@PathVariable Long id) {
+    public ResponseEntity<PlayerDto> getPlayer(@PathVariable String id) {
         try {
             return ResponseEntity.ok(playerService.getPlayer(id));
         } catch (IllegalArgumentException e) {

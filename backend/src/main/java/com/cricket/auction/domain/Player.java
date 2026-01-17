@@ -66,7 +66,7 @@ public class Player {
     private Double economyRate;
     
     // Default constructor required by JPA
-    protected Player() {}
+    public Player() {}
     
     public Player(String id, String name, PlayerRole role, Nationality nationality, Integer basePrice) {
         this.id = id;

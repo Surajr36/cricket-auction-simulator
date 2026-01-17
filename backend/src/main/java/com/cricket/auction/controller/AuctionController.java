@@ -42,7 +42,7 @@ public class AuctionController {
      * Get auction state by ID.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<AuctionDto> getAuction(@PathVariable Long id) {
+    public ResponseEntity<AuctionDto> getAuction(@PathVariable String id) {
         try {
             return ResponseEntity.ok(auctionService.getAuction(id));
         } catch (IllegalArgumentException e) {
@@ -84,8 +84,8 @@ public class AuctionController {
      */
     @PostMapping("/{auctionId}/unsold/{playerId}")
     public ResponseEntity<Void> markPlayerUnsold(
-            @PathVariable Long auctionId,
-            @PathVariable Long playerId) {
+            @PathVariable String auctionId,
+            @PathVariable String playerId) {
         try {
             auctionService.markPlayerUnsold(auctionId, playerId);
             return ResponseEntity.ok().build();
@@ -99,7 +99,7 @@ public class AuctionController {
      * Mark the auction as complete.
      */
     @PostMapping("/{id}/complete")
-    public ResponseEntity<AuctionDto> completeAuction(@PathVariable Long id) {
+    public ResponseEntity<AuctionDto> completeAuction(@PathVariable String id) {
         try {
             return ResponseEntity.ok(auctionService.completeAuction(id));
         } catch (IllegalArgumentException e) {

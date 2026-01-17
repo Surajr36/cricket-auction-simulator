@@ -56,9 +56,10 @@ public class DataSeeder implements CommandLineRunner {
         List<Team> teams = new ArrayList<>();
         for (JsonNode node : teamsNode) {
             Team team = new Team();
+            team.setId(node.get("id").asText());
             team.setName(node.get("name").asText());
             team.setShortName(node.get("shortName").asText());
-            team.setInitialBudget(new BigDecimal(node.get("budget").asInt()));
+            team.setInitialBudget(node.get("budget").asInt());
             team.setPrimaryColor(node.get("primaryColor").asText());
             teams.add(team);
         }
@@ -79,10 +80,11 @@ public class DataSeeder implements CommandLineRunner {
         List<Player> players = new ArrayList<>();
         for (JsonNode node : playersNode) {
             Player player = new Player();
+            player.setId(node.get("id").asText());
             player.setName(node.get("name").asText());
             player.setRole(parseRole(node.get("role").asText()));
             player.setNationality(parseNationality(node.get("nationality").asText()));
-            player.setBasePrice(new BigDecimal(node.get("basePrice").asInt()));
+            player.setBasePrice(node.get("basePrice").asInt());
 
             // Parse stats
             JsonNode stats = node.get("stats");

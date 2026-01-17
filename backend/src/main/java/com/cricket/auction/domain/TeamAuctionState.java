@@ -39,7 +39,7 @@ public class TeamAuctionState {
     private Integer remainingBudget;
     
     // Default constructor for JPA
-    protected TeamAuctionState() {}
+    public TeamAuctionState() {}
     
     public TeamAuctionState(Team team, Integer remainingBudget) {
         this.team = team;

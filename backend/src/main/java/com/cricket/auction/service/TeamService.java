@@ -36,7 +36,7 @@ public class TeamService {
      * 
      * @throws IllegalArgumentException if team not found
      */
-    public TeamDto getTeam(Long id) {
+    public TeamDto getTeam(String id) {
         return teamRepository.findById(id)
                 .map(TeamDto::fromEntity)
                 .orElseThrow(() -> new IllegalArgumentException("Team not found: " + id));

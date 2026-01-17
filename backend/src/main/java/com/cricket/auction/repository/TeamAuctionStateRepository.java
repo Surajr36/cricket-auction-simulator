@@ -15,5 +15,5 @@ public interface TeamAuctionStateRepository extends JpaRepository<TeamAuctionSta
     /**
      * Find a team's state in a specific auction.
      */
-    Optional<TeamAuctionState> findByAuctionIdAndTeamId(Long auctionId, Long teamId);
+    Optional<TeamAuctionState> findByAuctionIdAndTeamId(String auctionId, String teamId);
 }

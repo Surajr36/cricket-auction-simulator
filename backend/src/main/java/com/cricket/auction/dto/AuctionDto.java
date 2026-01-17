@@ -1,6 +1,9 @@
 package com.cricket.auction.dto;
 
+import com.cricket.auction.domain.AuctionStatus;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 /**
  * DTO for complete auction state.
@@ -8,7 +11,9 @@ import java.util.List;
  */
 public record AuctionDto(
     String id,
-    String status,
+    AuctionStatus status,
+    LocalDateTime startedAt,
+    LocalDateTime completedAt,
     List<TeamAuctionStateDto> teams,
-    List<String> completedPlayerIds
+    Set<String> completedPlayerIds
 ) {}

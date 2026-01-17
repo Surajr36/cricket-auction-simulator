@@ -38,7 +38,7 @@ public class Team {
     private String primaryColor;
     
     // Default constructor for JPA
-    protected Team() {}
+    public Team() {}
     
     public Team(String id, String name, String shortName, Integer initialBudget, String primaryColor) {
         this.id = id;

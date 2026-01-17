@@ -40,11 +40,11 @@ public class PlayerService {
      * 
      * @param soldPlayerIds IDs of players already sold in current auction
      */
-    public List<PlayerDto> getAvailablePlayers(Set<Long> soldPlayerIds) {
+    public List<PlayerDto> getAvailablePlayers(Set<String> soldPlayerIds) {
         if (soldPlayerIds.isEmpty()) {
             return getAllPlayers();
         }
-        return playerRepository.findByIdNotIn(soldPlayerIds)
+        return playerRepository.findByIdNotIn(new java.util.ArrayList<>(soldPlayerIds))
                 .stream()
                 .map(PlayerDto::fromEntity)
                 .toList();
@@ -55,7 +55,7 @@ public class PlayerService {
      * 
      * @throws IllegalArgumentException if player not found
      */
-    public PlayerDto getPlayer(Long id) {
+    public PlayerDto getPlayer(String id) {
         return playerRepository.findById(id)
                 .map(PlayerDto::fromEntity)
                 .orElseThrow(() -> new IllegalArgumentException("Player not found: " + id));

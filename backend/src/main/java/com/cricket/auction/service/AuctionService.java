@@ -48,24 +48,23 @@ public class AuctionService {
     @Transactional
     public AuctionDto startAuction() {
         // Create new auction
-        Auction auction = new Auction();
-        auction.setStatus(AuctionStatus.IN_PROGRESS);
+        Auction auction = new Auction(AuctionStatus.IN_PROGRESS);
         auction.setStartedAt(LocalDateTime.now());
         auction = auctionRepository.save(auction);
+        
+        final Auction savedAuction = auction;
 
         // Initialize team states for this auction
         List<Team> teams = teamRepository.findAll();
         List<TeamAuctionState> teamStates = new ArrayList<>();
         
         for (Team team : teams) {
-            TeamAuctionState state = new TeamAuctionState();
-            state.setAuction(auction);
-            state.setTeam(team);
-            state.setRemainingBudget(team.getInitialBudget());
+            TeamAuctionState state = new TeamAuctionState(team, team.getInitialBudget());
+            state.setAuction(savedAuction);
             teamStates.add(state);
         }
         teamAuctionStateRepository.saveAll(teamStates);
-        auction.setTeamStates(new HashSet<>(teamStates));
+        auction.setTeamStates(teamStates);
 
         return buildAuctionDto(auction);
     }
@@ -73,7 +72,7 @@ public class AuctionService {
     /**
      * Get auction by ID with full state.
      */
-    public AuctionDto getAuction(Long auctionId) {
+    public AuctionDto getAuction(String auctionId) {
         Auction auction = auctionRepository.findById(auctionId)
                 .orElseThrow(() -> new IllegalArgumentException("Auction not found: " + auctionId));
         return buildAuctionDto(auction);
@@ -120,12 +119,8 @@ public class AuctionService {
         }
 
         // Record the sale
-        PlayerSale sale = new PlayerSale();
+        PlayerSale sale = new PlayerSale(player, team, request.amount());
         sale.setAuction(auction);
-        sale.setPlayer(player);
-        sale.setTeam(team);
-        sale.setSoldPrice(request.price());
-        sale.setSoldAt(LocalDateTime.now());
         playerSaleRepository.save(sale);
 
         // Update team's remaining budget
@@ -133,7 +128,7 @@ public class AuctionService {
                 .findByAuctionIdAndTeamId(auction.getId(), team.getId())
                 .orElseThrow(() -> new IllegalStateException("Team state not found"));
         
-        teamState.setRemainingBudget(teamState.getRemainingBudget().subtract(request.price()));
+        teamState.setRemainingBudget(teamState.getRemainingBudget() - request.amount());
         teamAuctionStateRepository.save(teamState);
 
         // Build result with updated team state
@@ -145,7 +140,7 @@ public class AuctionService {
      * Mark a player as unsold (no bids received).
      */
     @Transactional
-    public void markPlayerUnsold(Long auctionId, Long playerId) {
+    public void markPlayerUnsold(String auctionId, String playerId) {
         Auction auction = auctionRepository.findById(auctionId)
                 .orElseThrow(() -> new IllegalArgumentException("Auction not found: " + auctionId));
 
@@ -153,12 +148,8 @@ public class AuctionService {
                 .orElseThrow(() -> new IllegalArgumentException("Player not found: " + playerId));
 
         // Record as unsold (no team, price = 0)
-        PlayerSale unsold = new PlayerSale();
+        PlayerSale unsold = new PlayerSale(player, null, 0);
         unsold.setAuction(auction);
-        unsold.setPlayer(player);
-        unsold.setTeam(null);
-        unsold.setSoldPrice(BigDecimal.ZERO);
-        unsold.setSoldAt(LocalDateTime.now());
         playerSaleRepository.save(unsold);
     }
 
@@ -166,7 +157,7 @@ public class AuctionService {
      * Complete an auction.
      */
     @Transactional
-    public AuctionDto completeAuction(Long auctionId) {
+    public AuctionDto completeAuction(String auctionId) {
         Auction auction = auctionRepository.findById(auctionId)
                 .orElseThrow(() -> new IllegalArgumentException("Auction not found: " + auctionId));
         
@@ -183,24 +174,11 @@ public class AuctionService {
     private AuctionDto buildAuctionDto(Auction auction) {
         List<PlayerSale> sales = playerSaleRepository.findByAuctionId(auction.getId());
         
-        Map<Long, List<AcquiredPlayerDto>> playersByTeam = sales.stream()
-                .filter(sale -> sale.getTeam() != null) // Exclude unsold
-                .collect(Collectors.groupingBy(
-                        sale -> sale.getTeam().getId(),
-                        Collectors.mapping(
-                                sale -> new AcquiredPlayerDto(
-                                        PlayerDto.fromEntity(sale.getPlayer()),
-                                        sale.getSoldPrice()
-                                ),
-                                Collectors.toList()
-                        )
-                ));
-
         List<TeamAuctionStateDto> teamStates = auction.getTeamStates().stream()
                 .map(state -> buildTeamStateDto(state, auction.getId()))
                 .toList();
 
-        Set<Long> soldPlayerIds = sales.stream()
+        Set<String> soldPlayerIds = sales.stream()
                 .map(sale -> sale.getPlayer().getId())
                 .collect(Collectors.toSet());
 
@@ -217,14 +195,14 @@ public class AuctionService {
     /**
      * Build TeamAuctionStateDto with acquired players.
      */
-    private TeamAuctionStateDto buildTeamStateDto(TeamAuctionState state, Long auctionId) {
+    private TeamAuctionStateDto buildTeamStateDto(TeamAuctionState state, String auctionId) {
         List<PlayerSale> teamSales = playerSaleRepository
                 .findByAuctionIdAndTeamId(auctionId, state.getTeam().getId());
 
         List<AcquiredPlayerDto> acquiredPlayers = teamSales.stream()
                 .map(sale -> new AcquiredPlayerDto(
                         PlayerDto.fromEntity(sale.getPlayer()),
-                        sale.getSoldPrice()
+                        sale.getSalePrice()
                 ))
                 .toList();
 

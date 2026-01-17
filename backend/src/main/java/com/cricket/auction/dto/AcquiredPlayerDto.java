@@ -5,6 +5,6 @@ package com.cricket.auction.dto;
  * Minimal info - just what's needed to track the purchase.
  */
 public record AcquiredPlayerDto(
-    String playerId,
+    PlayerDto player,
     Integer purchasePrice
 ) {}
